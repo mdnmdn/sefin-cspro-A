@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sefin.ApiTester", "ApiTeste
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sefin.ApiTester.Commons", "ApiTester\Sefin.ApiTester.Commons\Sefin.ApiTester.Commons.csproj", "{19D3CC3D-B71F-4DC0-879E-CC073ACB9DCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sefin.CsProA.GenericsPlay", "Sefin.CsProA.GenericsPlay\Sefin.CsProA.GenericsPlay.csproj", "{32940940-0934-419E-A106-ED8D8A041536}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{19D3CC3D-B71F-4DC0-879E-CC073ACB9DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19D3CC3D-B71F-4DC0-879E-CC073ACB9DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19D3CC3D-B71F-4DC0-879E-CC073ACB9DCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32940940-0934-419E-A106-ED8D8A041536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32940940-0934-419E-A106-ED8D8A041536}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32940940-0934-419E-A106-ED8D8A041536}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32940940-0934-419E-A106-ED8D8A041536}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
