@@ -28,7 +28,16 @@ namespace Sefin.CsProA.GenericsPlay
         public T Get(string id) {
 
             return _container[id]; 
-        }        
+        }
+    }
+
+    public class ExtendedDocumentManager<T> : DocumentManager<T> where T : Documento
+    {
+
+    }
+
+    public class FatturaDocumentManager : DocumentManager<Fattura>
+    {
 
     }
 }

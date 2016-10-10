@@ -27,4 +27,8 @@ namespace Sefin.CsProA.GenericsPlay
         public int Numero { get; set; }
 
     }
+
+    public class FatturaInternazionale : Fattura {
+
+    }
 }

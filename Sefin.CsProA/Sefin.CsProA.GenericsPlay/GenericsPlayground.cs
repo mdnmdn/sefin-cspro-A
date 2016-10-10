@@ -90,7 +90,48 @@ namespace Sefin.CsProA.GenericsPlay
         //{
         //    throw new NotImplementedException();
         //}
+
+
+        public void DocumentManagerPlayground(){
+            var manager = new DocumentManager<Fattura>();
+            manager.Add(new Fattura());
+            manager.Add(new FatturaInternazionale());
+
+            var f = manager.Get("sdasdf");
+
+        }
+
+
+        public void ProcessaDocumento<T>(T doc) where T : Documento {
+            var fattura = doc as Fattura;
+            if (fattura != null) {
+                // fai cose per la fattura
+            }
+
+            var bolla = doc as Bolla;
+            if (bolla != null) {
+                // fai cose per la bolla
+            }
+        }
     }
+
+    //public interface IDocProcessor { }
+
+    //public abstract class DocProcessor<T> : IDocProcessor where T : Documento { }
+
+    //public class FatturaProcessor : DocProcessor<Fattura> { }
+    //public class BollaProcessor : DocProcessor<Bolla> { }
+
+    //public class ProcessorFactory
+    //{
+    //    Dictionary<Type, IDocProcessor> _processorRegistry;
+
+    //    public DocProcessor<T> GetProcessor<T>() where T : Documento
+    //    {
+    //        return _processorRegistry[typeof(T)] as DocProcessor<T>;
+    //    }
+
+    //}
 
     public class Cliente { }
     public class TipoDocumento { }

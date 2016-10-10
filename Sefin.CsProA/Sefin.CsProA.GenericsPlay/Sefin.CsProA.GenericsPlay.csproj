@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomList.cs" />
+    <Compile Include="DelegatePlayGround.cs" />
     <Compile Include="DocumentManager.cs" />
     <Compile Include="Documento.cs" />
     <Compile Include="GenericsPlayground.cs" />
