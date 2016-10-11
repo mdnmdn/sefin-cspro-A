@@ -49,6 +49,7 @@
     <Compile Include="Documento.cs" />
     <Compile Include="Esercizio.cs" />
     <Compile Include="GenericsPlayground.cs" />
+    <Compile Include="LambdaPlay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -15,6 +15,12 @@ namespace Sefin.CsProA.GenericsPlay
         public int Size { get; set; }
 
         public DateTime Data { get; set; }
+
+
+        public override string ToString()
+        {
+            return $"[ID: {Id} - Nome: {this.Nome}]";
+        }
     }
 
     public class Bolla : Documento {
