@@ -8,23 +8,26 @@ namespace Sefin.CsProA.GenericsPlay
 {
     class DelegateEx1
     {
-        // TODO:
-        //delegate int Op(int val);
+        //TODO:
+        delegate int Op(int val);
 
-        //public void Test() {
+        public void Test()
+        {
+            int[] nums = { 1, 3, 56 };
 
+            // TODO: 
+            Op[] operazioni = {
+        //        Doppio, Quadrato, Togli5
+            };
 
-        //    int[] nums = { 1, 3, 56 };
+         //   int[] results = ApplicaTrasformazioni(nums, operazioni);
+        }
 
+        int[] ApplicaTrasfomazoni(int[] vals, Op[] operations)
+        {
+            return vals;
+        }
 
-        //    // TODO: 
-        //    Op[] operazioni  = ...
-
-        //    int[] results = ApplicaTrasformazioni(nums, operazioni);
-        //}
-
-        //int[] ApplicaTrasfomazoni(int[] vals, ...) {
-
-        //}
+        int Doppio(int val) => val * 2;
     }
 }

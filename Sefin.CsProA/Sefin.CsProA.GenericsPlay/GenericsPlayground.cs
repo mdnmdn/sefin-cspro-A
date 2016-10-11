@@ -13,6 +13,8 @@ namespace Sefin.CsProA.GenericsPlay
 
             List<Cliente> elencoClienti = new List<Cliente>();
 
+            //elencoClienti.Sort()
+
             elencoClienti.Add(new Cliente());
 
             var cl = elencoClienti[0];
@@ -51,7 +53,6 @@ namespace Sefin.CsProA.GenericsPlay
             list.Add(new Cliente());
 
             list.Update(0, new Cliente());
-
 
             var documentList = new CustomList<TipoDocumento>();
             documentList.Add(new TipoDocumento());

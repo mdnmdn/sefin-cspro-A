@@ -17,6 +17,14 @@ namespace Sefin.CsProA.GenericsPlay
 
     public delegate T Trasformazione<T>(T val);
 
+    public delegate bool Verifier<T>(T val);
+
+    public delegate bool Comparer<T>(T val1,T val2);
+
+    public delegate List<T> Lister<T>(T val1, T val2, T val3);
+
+    public delegate List<T> Distiller<T>(List<T> data);
+
     class DelegatePlayGround
     {
         public void Intro() {

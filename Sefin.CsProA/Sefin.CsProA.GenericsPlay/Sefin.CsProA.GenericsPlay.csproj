@@ -40,11 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonPlay\FakeButton.cs" />
+    <Compile Include="ButtonPlay\TestPage.cs" />
     <Compile Include="CustomList.cs" />
     <Compile Include="DelegateEx1.cs" />
     <Compile Include="DelegatePlayGround.cs" />
     <Compile Include="DocumentManager.cs" />
     <Compile Include="Documento.cs" />
+    <Compile Include="Esercizio.cs" />
     <Compile Include="GenericsPlayground.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

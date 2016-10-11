@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sefin.CsProA.GenericsPlay
 {
-    public class CustomList<T> where T:class
+    public class CustomList<T> where T: class
     {
 
         T[] _container = new T[1000];

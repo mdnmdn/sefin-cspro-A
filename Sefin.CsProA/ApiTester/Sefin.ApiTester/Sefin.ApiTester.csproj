@@ -92,6 +92,10 @@
     <Content Include="assets\app.api.logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Sefin.CsProA.GenericsPlay\Sefin.CsProA.GenericsPlay.csproj">
+      <Project>{32940940-0934-419e-a106-ed8d8a041536}</Project>
+      <Name>Sefin.CsProA.GenericsPlay</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sefin.ApiTester.Commons\Sefin.ApiTester.Commons.csproj">
       <Project>{19d3cc3d-b71f-4dc0-879e-cc073acb9dcc}</Project>
       <Name>Sefin.ApiTester.Commons</Name>
