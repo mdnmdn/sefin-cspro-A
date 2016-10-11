@@ -1,6 +1,7 @@
 ﻿using Sefin.ApiTester.Commons;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
@@ -21,7 +22,16 @@ namespace Sefin.ApiTester
 
         public void Init() {
             Clear();
-            ExploreAssembly(Assembly.GetEntryAssembly());
+
+            var currentAsm = Assembly.GetExecutingAssembly();
+            ExploreAssembly(currentAsm);
+
+            foreach (var asmName in currentAsm.GetReferencedAssemblies())
+            {
+                if (asmName.FullName.StartsWith("System")) continue;
+                if (asmName.FullName.StartsWith("mscor")) continue;
+                ExploreAssembly(Assembly.Load(asmName));
+            }
         }
 
         private void ExploreAssembly(Assembly assembly)
@@ -33,11 +43,24 @@ namespace Sefin.ApiTester
                     continue;
                 }
 
-                var attrib = type.GetCustomAttribute<TestApiAttribute>();
-                if (attrib != null) {
-                    ExploreType(type, attrib.Label);
+                var attrib = type.GetCustomAttribute<CategoryAttribute>();
+                if (attrib != null && "Test".Equals(attrib.Category, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    string name = null;
+                    var descrAttribute = type.GetCustomAttribute<DescriptionAttribute>();
+                    if (descrAttribute != null)
+                        name = descrAttribute.Description;
+
+                    ExploreType(type, name);
                     continue;
-                } 
+                }
+
+                var testAttrib = type.GetCustomAttribute<TestApiAttribute>();
+                if (testAttrib != null)
+                {
+                    ExploreType(type, testAttrib.Label);
+                    continue;
+                }
             }
         }
 
@@ -75,19 +98,29 @@ namespace Sefin.ApiTester
         public MethodInfo Method { get; protected set; }
         public string Label { get; private set; }
 
-        public RunnableMethod(MethodInfo method)
+        public string TypeDescription { get; private set; }
+
+
+        public RunnableMethod(MethodInfo method, string categoryLabel = null)
         {
             Method = method;
 
-            var attr = Method.GetCustomAttribute<TestApiAttribute>();
+            TypeDescription = categoryLabel ?? Method.DeclaringType.Name;
 
             var name = method.Name;
+            var descrAttribute = Method.GetCustomAttribute<DescriptionAttribute>();
+            if (descrAttribute != null)
+            {
+                name = descrAttribute.Description;
+            }
+
+            var attr = Method.GetCustomAttribute<TestApiAttribute>();
             if (attr != null)
             {
                 name = attr.Label;
             }
 
-            Label = String.Format("{0} ({1})", name, Method.DeclaringType.Name);
+            Label = String.Format("{0} ({1})", name, TypeDescription);
         }
 
         public object Execute()

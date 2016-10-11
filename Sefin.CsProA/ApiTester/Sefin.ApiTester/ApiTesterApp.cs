@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -96,6 +97,7 @@ namespace Sefin.ApiTester
             SetStatus(AppStatus.Running);
             if (ChkClearLogs.Checked) CleatLogs();
             TablOutput.SelectTab(TabLog);
+            ShowResult(null);
             try
             {
                 System.Threading.ThreadPool.QueueUserWorkItem(_ => {
@@ -104,7 +106,9 @@ namespace Sefin.ApiTester
                         Properties.Settings.Default.LastMethod = method.Label;
                         Properties.Settings.Default.Save();
 
-                        method.Execute();
+                        var result = method.Execute();
+
+                        ShowResult(result);
                     }
                     catch (Exception ex)
                     {
@@ -120,6 +124,19 @@ namespace Sefin.ApiTester
                 Trace.Write("Error starting method " + CmbMethods.SelectedText);
                 Trace.WriteLine(ex.ToString());
                 SetStatus(AppStatus.Wait);
+            }
+        }
+
+        private void ShowResult(object result)
+        {
+            if (result == null){
+                //ResultGrid.Rows.Clear();
+                ResultGrid.Columns.Clear();
+                return;
+            }            
+            if (typeof(IEnumerable).IsAssignableFrom(result.GetType())) {
+                ResultGrid.DataSource = result;
+                
             }
         }
 

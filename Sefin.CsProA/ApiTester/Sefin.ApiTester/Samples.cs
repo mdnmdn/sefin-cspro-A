@@ -29,25 +29,25 @@ namespace Sefin.ApiTester
     //    }
     //}
 
-    [TestApi]
-    public class SamplesViaAttribute
-    {
-        public void TestViaAttribute()
-        {
-            Trace.Write("TestViaInterface");
-        }
+    //[TestApi]
+    //public class SamplesViaAttribute
+    //{
+    //    public void TestViaAttribute()
+    //    {
+    //        Trace.Write("TestViaInterface");
+    //    }
 
-        [TestApi("Test With attribute with description")]
-        public void TestViaInterfaceWithDescription()
-        {
-            Trace.Write("TestViaInterface");
-        }
+    //    [TestApi("Test With attribute with description")]
+    //    public void TestViaInterfaceWithDescription()
+    //    {
+    //        Trace.Write("TestViaInterface");
+    //    }
 
-        [TestApi("Exception")]
-        public void ThrowException()
-        {
-            Trace.Write("running exception!");
-            throw new Exception("Baaad!");
-        }
-    }
+    //    [TestApi("Exception")]
+    //    public void ThrowException()
+    //    {
+    //        Trace.Write("running exception!");
+    //        throw new Exception("Baaad!");
+    //    }
+    //}
 }

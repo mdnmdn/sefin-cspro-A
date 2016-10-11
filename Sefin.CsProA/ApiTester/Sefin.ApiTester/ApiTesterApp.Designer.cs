@@ -35,7 +35,7 @@
             this.TxtLog = new System.Windows.Forms.TextBox();
             this.TabQuery = new System.Windows.Forms.TabPage();
             this.TabData = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ResultGrid = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ChkClearLogs = new System.Windows.Forms.CheckBox();
             this.BtnClearLogs = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@
             this.TablOutput.SuspendLayout();
             this.TabLog.SuspendLayout();
             this.TabData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ResultGrid)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,7 +109,7 @@
             // 
             // TabData
             // 
-            this.TabData.Controls.Add(this.dataGridView1);
+            this.TabData.Controls.Add(this.ResultGrid);
             this.TabData.Location = new System.Drawing.Point(4, 22);
             this.TabData.Name = "TabData";
             this.TabData.Padding = new System.Windows.Forms.Padding(3);
@@ -118,17 +118,17 @@
             this.TabData.Text = "Data";
             this.TabData.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // ResultGrid
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(454, 231);
-            this.dataGridView1.TabIndex = 0;
+            this.ResultGrid.AllowUserToAddRows = false;
+            this.ResultGrid.AllowUserToDeleteRows = false;
+            this.ResultGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ResultGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ResultGrid.Location = new System.Drawing.Point(3, 3);
+            this.ResultGrid.Name = "ResultGrid";
+            this.ResultGrid.ReadOnly = true;
+            this.ResultGrid.Size = new System.Drawing.Size(454, 231);
+            this.ResultGrid.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -212,7 +212,7 @@
             this.TabLog.ResumeLayout(false);
             this.TabLog.PerformLayout();
             this.TabData.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ResultGrid)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -228,7 +228,7 @@
         private System.Windows.Forms.TabPage TabData;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox TxtLog;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ResultGrid;
         private System.Windows.Forms.ComboBox CmbMethods;
         private System.Windows.Forms.Button BtnLoadDll;
         private System.Windows.Forms.Button BtnExecute;

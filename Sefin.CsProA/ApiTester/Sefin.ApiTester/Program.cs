@@ -18,5 +18,9 @@ namespace Sefin.ApiTester
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ApiTesterApp());
         }
+
+        static void Init() {
+            
+        }
     }
 }

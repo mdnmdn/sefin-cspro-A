@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{32940940-0934-419E-A106-ED8D8A041536}</ProjectGuid>
+    <ProjectGuid>{DCC2B878-A346-41F8-A603-2D492B04CEF7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sefin.CsProA.GenericsPlay</RootNamespace>
-    <AssemblyName>Sefin.CsProA.GenericsPlay</AssemblyName>
+    <RootNamespace>Sefin.CsPro.Commons</RootNamespace>
+    <AssemblyName>Sefin.CsPro.Commons</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,14 +40,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomList.cs" />
-    <Compile Include="DelegateEx1.cs" />
-    <Compile Include="DelegatePlayGround.cs" />
-    <Compile Include="DocumentManager.cs" />
-    <Compile Include="Documento.cs" />
-    <Compile Include="GenericsPlayground.cs" />
+    <Compile Include="DataFactory.cs" />
+    <Compile Include="NorthwindDatabase.cs" />
+    <Compile Include="NortwindData.cs" />
+    <Compile Include="Domain\Category.cs" />
+    <Compile Include="Domain\Customer.cs" />
+    <Compile Include="Domain\Employee.cs" />
+    <Compile Include="Domain\EmployeeTerritory.cs" />
+    <Compile Include="Domain\IEntity.cs" />
+    <Compile Include="Domain\Order.cs" />
+    <Compile Include="Domain\OrderDetail.cs" />
+    <Compile Include="Domain\Product.cs" />
+    <Compile Include="Domain\Region.cs" />
+    <Compile Include="Domain\Shipper.cs" />
+    <Compile Include="Domain\Supplier.cs" />
+    <Compile Include="Domain\Territory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\SouthWind.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\northwind.dat" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

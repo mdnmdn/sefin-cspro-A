@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sefin.ApiTester.Commons", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sefin.CsProA.GenericsPlay", "Sefin.CsProA.GenericsPlay\Sefin.CsProA.GenericsPlay.csproj", "{32940940-0934-419E-A106-ED8D8A041536}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{A63AA590-8718-4EBB-9EFA-2456CA28F9F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sefin.CsPro.Commons", "Libs\Sefin.CsPro.Commons\Sefin.CsPro.Commons.csproj", "{DCC2B878-A346-41F8-A603-2D492B04CEF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,10 @@ Global
 		{32940940-0934-419E-A106-ED8D8A041536}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32940940-0934-419E-A106-ED8D8A041536}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32940940-0934-419E-A106-ED8D8A041536}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCC2B878-A346-41F8-A603-2D492B04CEF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCC2B878-A346-41F8-A603-2D492B04CEF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCC2B878-A346-41F8-A603-2D492B04CEF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCC2B878-A346-41F8-A603-2D492B04CEF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,5 +44,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{C2284AB6-59E2-4947-A7C5-5D55B53459C6} = {0AA1ABC7-0107-4EB1-86B0-14A2E0E8C379}
 		{19D3CC3D-B71F-4DC0-879E-CC073ACB9DCC} = {0AA1ABC7-0107-4EB1-86B0-14A2E0E8C379}
+		{DCC2B878-A346-41F8-A603-2D492B04CEF7} = {A63AA590-8718-4EBB-9EFA-2456CA28F9F2}
 	EndGlobalSection
 EndGlobal
