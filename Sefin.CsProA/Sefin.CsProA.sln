@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{EE7AC5
 		Assets\northwind.sql = Assets\northwind.sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sefin.CsProA.LinqPlay", "Sefin.CsProA.LinqPlay\Sefin.CsProA.LinqPlay.csproj", "{1C112016-294B-43A9-9320-484B4152DC78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{DCC2B878-A346-41F8-A603-2D492B04CEF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCC2B878-A346-41F8-A603-2D492B04CEF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCC2B878-A346-41F8-A603-2D492B04CEF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C112016-294B-43A9-9320-484B4152DC78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C112016-294B-43A9-9320-484B4152DC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C112016-294B-43A9-9320-484B4152DC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C112016-294B-43A9-9320-484B4152DC78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,12 +8,19 @@ using System.Threading.Tasks;
 
 namespace Sefin.CsProA.GenericsPlay
 {
+    public delegate int Calcola(int a, int b);
+    delegate void FaiCose();
+    delegate void FaiCoseConArgomento(string val);
+
+    public delegate string NumberConverter(int num);
+
+    public delegate TResult MdnFunc<TResult>();
+    public delegate TResult MdnFunc<TArg1, TResult>(TArg1 arg1);
+    public delegate TResult MdnFunc<TArg1,TArg2, TResult>(TArg1 arg1, TArg2 arg2);
+
     [Category("test")]
     public class LambdaPlay
     {
-        delegate int Calcola(int a, int b);
-        delegate void FaiCose();
-        delegate void FaiCoseConArgomento(string val);
 
         public void Intro()
         {
@@ -29,8 +36,16 @@ namespace Sefin.CsProA.GenericsPlay
 
             Trace.WriteLine("Somma: " + result);
 
+            Func<int, int> Raddoppia = num => num * 2;
 
             FaiCose fc = () => Trace.WriteLine("faccio cose");
+
+
+            var anno = 2016;
+
+            Func<int,int,DateTime>  calcolaData = 
+                    (mese, giorno) => new DateTime(anno, mese, giorno);
+
 
             fc = () =>
             {
@@ -49,6 +64,11 @@ namespace Sefin.CsProA.GenericsPlay
 
 
             FaiCoseConArgomento stampa = a => Trace.WriteLine("> " + a);
+
+
+            Func<int, string> c = num => num.ToString();
+
+            NumberConverter nc = num => num.ToString();
         }
 
 
@@ -80,7 +100,7 @@ namespace Sefin.CsProA.GenericsPlay
             docs.Sort(comparatorePerNome);
 
 
-            docs.Sort((doc1,doc2) => doc2.Nome.CompareTo(doc1.Nome));
+            docs.Sort((doc1, doc2) => doc2.Nome.CompareTo(doc1.Nome));
 
             Trace.WriteLine("Ordino per nome inverso con lamda");
             Trace.WriteLine(String.Join(", ", docs));

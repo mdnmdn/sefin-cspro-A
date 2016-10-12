@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{32940940-0934-419E-A106-ED8D8A041536}</ProjectGuid>
+    <ProjectGuid>{1C112016-294B-43A9-9320-484B4152DC78}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sefin.CsProA.GenericsPlay</RootNamespace>
-    <AssemblyName>Sefin.CsProA.GenericsPlay</AssemblyName>
+    <RootNamespace>Sefin.CsProA.LinqPlay</RootNamespace>
+    <AssemblyName>Sefin.CsProA.LinqPlay</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,17 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ButtonPlay\FakeButton.cs" />
-    <Compile Include="ButtonPlay\TestPage.cs" />
-    <Compile Include="CustomList.cs" />
-    <Compile Include="DelegateEx1.cs" />
-    <Compile Include="DelegatePlayGround.cs" />
-    <Compile Include="DocumentManager.cs" />
-    <Compile Include="Documento.cs" />
-    <Compile Include="Esercizio.cs" />
-    <Compile Include="ExtensionPlay.cs" />
-    <Compile Include="GenericsPlayground.cs" />
-    <Compile Include="LambdaPlay.cs" />
+    <Compile Include="LinqPlayground.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

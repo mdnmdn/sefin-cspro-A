@@ -1,4 +1,5 @@
 ﻿using Sefin.CsProA.GenericsPlay;
+using Sefin.CsProA.LinqPlay;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace Sefin.ApiTester
 
         static void Init() {
             new Esercizio();
+            new LinqPlayground();
         }
     }
 }

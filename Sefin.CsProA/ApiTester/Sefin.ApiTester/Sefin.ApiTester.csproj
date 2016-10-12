@@ -96,6 +96,10 @@
       <Project>{32940940-0934-419e-a106-ed8d8a041536}</Project>
       <Name>Sefin.CsProA.GenericsPlay</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Sefin.CsProA.LinqPlay\Sefin.CsProA.LinqPlay.csproj">
+      <Project>{1c112016-294b-43a9-9320-484b4152dc78}</Project>
+      <Name>Sefin.CsProA.LinqPlay</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sefin.ApiTester.Commons\Sefin.ApiTester.Commons.csproj">
       <Project>{19d3cc3d-b71f-4dc0-879e-cc073acb9dcc}</Project>
       <Name>Sefin.ApiTester.Commons</Name>
