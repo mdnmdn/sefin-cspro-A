@@ -189,8 +189,6 @@ namespace Sefin.CsProA.LinqPlay
 
 
         }
-
-
         static void LogValues<T>(IEnumerable<T> data) {
 
             Trace.WriteLine("[" + String.Join(", ", data) + "]");

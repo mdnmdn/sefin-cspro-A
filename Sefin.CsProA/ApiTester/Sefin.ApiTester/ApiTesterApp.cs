@@ -129,14 +129,17 @@ namespace Sefin.ApiTester
 
         private void ShowResult(object result)
         {
-            if (result == null){
+            if (result == null)
+            {
                 //ResultGrid.Rows.Clear();
                 ResultGrid.Columns.Clear();
                 return;
-            }            
-            if (typeof(IEnumerable).IsAssignableFrom(result.GetType())) {
-                ResultGrid.DataSource = result;
-                
+            }
+            var type = result.GetType();
+            if (typeof(IEnumerable).IsAssignableFrom(type))
+            {
+                var data = ((IEnumerable)result).Cast<object>().ToList();
+                ResultGrid.DataSource = data;
             }
         }
 
