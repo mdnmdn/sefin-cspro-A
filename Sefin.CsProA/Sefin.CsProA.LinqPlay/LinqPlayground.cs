@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 
@@ -22,6 +23,7 @@ namespace Sefin.CsProA.LinqPlay
             var res1 = strings.Select(s => s);
             LogValues(res1);
 
+            //var res2 = strings.Select(s => "pippo");
             var res2 = strings.Select(s => s.Length);
             LogValues(res2);
 
@@ -47,6 +49,45 @@ namespace Sefin.CsProA.LinqPlay
 
             var formattedDates = numbers.Select(i => new DateTime(2016, 10, i))
                                         .Select(d => d.ToString("dd/MM/yyyy"));
+
+            var ddd = numbers
+                .Select(i => new { Num = i, Date = new DateTime(2016, 10, i) })
+                .Where(d => FiltraGiorniFeriali(d.Date))
+                .OrderBy(d => d.Date.DayOfWeek)
+                .Select(d => d.Num);
+
+            var dddf = from n in numbers
+                       where FiltraGiorniFeriali(new DateTime(2016, 10, n))
+                       orderby new DateTime(2016, 10, n).DayOfWeek
+                       select n;
+// --------------------
+            var dd1 = from n in numbers
+                        select new { Num = n, Date = new DateTime(2016, 10, n) };
+
+            var dd2 = from d in dd1
+                      where FiltraGiorniFeriali(d.Date)
+                      orderby d.Date.DayOfWeek
+                      select d.Num;
+            // --------------------
+
+            var dd3 = from d in (from n in numbers
+                                 select new {
+                                     Num = n,
+                                     Date = new DateTime(2016, 10, n)
+                                 })
+                      where FiltraGiorniFeriali(d.Date)
+                      orderby d.Date.DayOfWeek
+                      select d.Num;
+            // --------------------
+
+            var dd4 = from d in numbers.Select( n=> new{
+                                     Num = n,
+                                     Date = new DateTime(2016, 10, n)
+                                 })
+                      where FiltraGiorniFeriali(d.Date)
+                      orderby d.Date.DayOfWeek
+                      select d.Num;
+            // --------------------
 
             //numbers.Select(i => {
             //    var date = new DateTime(2016, 10, i);
@@ -83,6 +124,14 @@ namespace Sefin.CsProA.LinqPlay
 
         }
 
+        bool FiltraGiorniFeriali(DateTime date) {
+            if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday) {
+                return false;
+            }
+
+            return true;
+        }
+
         public void LinqSyntax()
         {
             var strings = new String[] {
@@ -104,7 +153,7 @@ namespace Sefin.CsProA.LinqPlay
                        select "@" + s;
 
             LogValues(res2);
-
+                    // from strings as s
             var res3 = from s in strings
                        where s.Length <= 3 && s.Contains("e")
                        orderby s
@@ -146,7 +195,7 @@ namespace Sefin.CsProA.LinqPlay
                         })
                         .Where(t => t.Upper.Contains("E"))
                         .Where(t => t.Length > 3);
-            LogValues(res1);
+            LogValues(res2);
 
             var res3 = from s in strings
                        where s.ToUpper().Contains("E")
@@ -186,9 +235,26 @@ namespace Sefin.CsProA.LinqPlay
             LogValues(res4);
             LogValues(res4);
 
-
-
         }
+
+        //public void PlayWithDataTable() {
+        //    DataTable dt = LoadData();
+        //    dt.Columns.Cast<DataColumn>();
+        //    var clienti = dt.Rows.OfType<DataRow>()
+        //            .Where(r => "pippo" == (string)r["Cliente"])
+        //            .Where(r => (int)r["Id"] == 12)
+        //            .Select(r => new {
+        //                Id = r["Id"].AsInt(),
+        //                RagioneSociale = r["RagioneSociale"].AsString()
+        //            });
+
+        //    //clienti
+
+        //    //IEnumerable<DataColumn> columns;
+
+
+        //}
+
         static void LogValues<T>(IEnumerable<T> data) {
 
             Trace.WriteLine("[" + String.Join(", ", data) + "]");

@@ -40,8 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LinqComplesObjects.cs" />
     <Compile Include="LinqPlayground.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libs\Sefin.CsPro.Commons\Sefin.CsPro.Commons.csproj">
+      <Project>{dcc2b878-a346-41f8-a603-2d492b04cef7}</Project>
+      <Name>Sefin.CsPro.Commons</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
