@@ -17,5 +17,10 @@ namespace Sefin.CsPro.Commons.Domain
         public virtual byte[] Picture { get; set; }
 
         public virtual ISet<Product> Products { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Id}. {CategoryName}";
+        }
     }
 }
