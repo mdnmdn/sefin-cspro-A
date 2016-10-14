@@ -36,7 +36,19 @@
     <ApplicationIcon>app.api.logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HibernatingRhinos.Profiler.Appender">
+      <HintPath>..\..\..\..\..\..\..\..\Tools\EntityFramework.Profiler\HibernatingRhinos.Profiler.Appender.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -73,6 +85,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -92,6 +105,10 @@
     <Content Include="assets\app.api.logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Sefin.CsProA.EFPlay\Sefin.CsProA.EFPlay.csproj">
+      <Project>{63c470b3-4b44-4d1d-b92d-97709dacff74}</Project>
+      <Name>Sefin.CsProA.EFPlay</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Sefin.CsProA.GenericsPlay\Sefin.CsProA.GenericsPlay.csproj">
       <Project>{32940940-0934-419e-a106-ed8d8a041536}</Project>
       <Name>Sefin.CsProA.GenericsPlay</Name>

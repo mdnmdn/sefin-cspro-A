@@ -114,18 +114,83 @@ namespace Sefin.CsProA.LinqPlay
         {
             var db = new NorthwindDatabase();
 
-
             // Elenco di prodotti che hanno elementi a magazzino
+            var prod1 = db.Products.Where(p => p.UnitsInStock > 0)
+                                .Select(p => new { p.ProductName, p.UnitsInStock});
+            //return prod1;
 
             // Elenco di prodotti la cui nome categoria contiene 'bev' (da gestire come parametro)
+            string filter = "bev";
+            //filter = filter.ToLower();
+            //var prod2 = db.Products.Where(p => p.Category.CategoryName.ToLower().Contains(filter))
+            //                .Select(p => new { p.ProductName, p.Category.CategoryName });
+
+            var prod2 = db.Products.Where(p =>  p.Category.CategoryName
+                                   .IndexOf(filter,StringComparison.CurrentCultureIgnoreCase) >= 0  )
+                                  .Select(p => new { p.ProductName, p.Category.CategoryName });
+
+
+            //prod2 = db.Products.Where(p =>
+            //                p.Category.CategoryName.ToLower().Contains(filter)
+            //                || p.ProductName.ToLower().Contains(filter)
+            //                || p.Category.Description.ToLower().Contains(filter))
+            //        .Select(p => new { p.ProductName, p.Category.CategoryName});
+
+            //prod2 = db.Products.Where(p =>
+            //                ( p.Category.CategoryName + p.Category.Description
+            //                 + p.ProductName).ToLower().Contains(filter))
+            //        .Select(p => new { p.ProductName, p.Category.CategoryName });
+
+            Trace.WriteLine($"prods: {prod2.Count()}");
+
+            //return prod2;
 
             // Valore totale di prodotti che ho a magazzino
+            var totalValue = db.Products.Sum(p => p.UnitPrice * p.UnitsInStock);
+            var totalValue2 = db.Products.Select(p => p.UnitPrice * p.UnitsInStock).Sum();
+
+            Trace.WriteLine($"Total prod value: {totalValue} - {totalValue2}");
 
             // Valore totale di prodotti per categoria
+            var categ1 = db.Categories.Select(c => new {
+                    c.CategoryName ,
+                    TotalValue = db.Products.Where(p => p.Category.Id == c.Id)
+                                            .Sum(p => p.UnitPrice * p.UnitsInStock)
+                });
+
+            categ1 = (from c in db.Categories
+                     select new
+                     {
+                         c.CategoryName,
+                         TotalValue = db.Products
+                                            .Where(p => p.Category.Id == c.Id)
+                                            .Sum(p => p.UnitPrice * p.UnitsInStock)
+                     });
+
+            //return categ1;
 
             // Elenco dei client che ho in USA
-            
+            var customers = from c in db.Customers
+                            where c.Country == "USA"
+                            select new
+                            {
+                                c.Id,
+                                c.CompanyName,
+                                c.Country
+                            };
+
+            //return customers;
+
             // Elenco delle categorie ordinate per quantità di prodotto
+
+            var categ2 = db.Categories.Select(c => new
+            {
+                c.CategoryName,
+                ProdQty = db.Products.Where(p => p.Category.Id == c.Id)
+                                                  .Sum(p => p.UnitsInStock)
+            }).OrderBy(c => c.ProdQty).ThenBy(c => c.CategoryName);
+
+            return categ2;
 
             return null;
         }

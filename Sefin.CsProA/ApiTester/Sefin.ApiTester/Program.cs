@@ -1,4 +1,5 @@
-﻿using Sefin.CsProA.GenericsPlay;
+﻿using Sefin.CsProA.EFPlay.NW;
+using Sefin.CsProA.GenericsPlay;
 using Sefin.CsProA.LinqPlay;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace Sefin.ApiTester
         [STAThread]
         static void Main()
         {
+            HibernatingRhinos.Profiler.Appender.EntityFramework.EntityFrameworkProfiler.Initialize();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ApiTesterApp());
@@ -24,6 +27,7 @@ namespace Sefin.ApiTester
         static void Init() {
             new Esercizio();
             new LinqPlayground();
+            new NorthwindContext();
         }
     }
 }
