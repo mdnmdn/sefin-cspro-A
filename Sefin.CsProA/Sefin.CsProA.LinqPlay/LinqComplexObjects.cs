@@ -50,7 +50,8 @@ namespace Sefin.CsProA.LinqPlay
 
 
             var prodCatList = prodCat1.ToList();
-            var a = prodCatList.Count;
+            //var a = prodCatList.Count;
+
             var b = prodCatList.Count();
 
 
@@ -69,6 +70,29 @@ namespace Sefin.CsProA.LinqPlay
             var prod2 = prodCat1.FirstOrDefault();  // 0 + 
             //var prod3 = prodCat1.Single(); // 1 di 1
             //var prod4 = prodCat1.SingleOrDefault(); // 1 o 0
+
+            // ---
+
+            if (prodCat1.Any(p => p.UnitsInStock > 0)){
+                // solo se sono presenti elementi
+            }
+
+            // ---
+
+            var prodsWithStock = prodCat1.Where(p => p.UnitsInStock > 0);
+
+            // operazione eseguita 2 volte
+            if (prodsWithStock.Any()) {
+                foreach (var p in prodsWithStock) {
+                    //
+                }
+            }
+
+            
+            if (prodCat1.Where(p => p.UnitsInStock > 0).Any())
+            {
+
+            }
 
 
             // -----

@@ -89,6 +89,8 @@ namespace Sefin.CsProA.LinqPlay
                       select d.Num;
             // --------------------
 
+
+
             //numbers.Select(i => {
             //    var date = new DateTime(2016, 10, i);
             //    var txt = date.ToString("dd/MM/yyyy");
