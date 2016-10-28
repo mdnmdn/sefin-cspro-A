@@ -167,5 +167,19 @@ namespace Sefin.CsProA.EFPlay
         }
     }
 
-    
+
+    /*
+      
+    * Stampa Id, Nome del prodotto 11
+    * Stampa Id, Nome,CategoryName del prodotto 11
+    * Id, Nome di Tutti i prodotti della categoria 2
+    * Id, Nome, CategoryName di Tutti i prodotti della categoria 2
+    * Id, Nome, CategoryName di Tutti i prodotti delle categorie che iniziano per C
+    * Id, Nome delle categoria che hanno prodotti in riordino (flag reorder?)
+    * Id, Nome, CategoryName di Tutti i prodotti da riordinare (unitinstock e reorder level)
+    * Id, Nome delle categoria che hanno prodotti da riordinare (unitinstock e reorder level)
+    * Id, Nome e num prodotti di tutte le categorie
+
+
+    */
 }
