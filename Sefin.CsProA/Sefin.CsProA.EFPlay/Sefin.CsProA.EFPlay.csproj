@@ -120,6 +120,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\Sefin.CsProA.LinqPlay\data.xml">
+      <Link>data.xml</Link>
+    </Content>
     <Content Include="NW\NorthwindContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NorthwindContext.Context.cs</LastGenOutput>
