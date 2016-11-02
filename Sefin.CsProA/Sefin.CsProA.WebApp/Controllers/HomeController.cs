@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sefin.CsProA.Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,11 @@ namespace Sefin.CsProA.WebApp.Controllers
     {
         public ActionResult Index()
         {
+            using (var categoryService = new CategoryServices())
+            {
+                ViewBag.NumCategories = categoryService.CountCategories();
+            }
+
             return View();
         }
 
