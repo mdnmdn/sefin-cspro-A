@@ -14,6 +14,7 @@ namespace Sefin.CsProA.Logic
         }
 
         public int CountCategories() {
+
             return DataContext.Categories.Count();
         }
 
