@@ -92,6 +92,7 @@
     <Compile Include="Dal\Region.cs">
       <DependentUpon>NorthwindContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dal\ReportingDal.cs" />
     <Compile Include="Dal\Shippers.cs">
       <DependentUpon>NorthwindContext.tt</DependentUpon>
     </Compile>

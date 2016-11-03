@@ -10,6 +10,10 @@ namespace Sefin.CsProA.Logic
     public class ProductServices:BaseServices
     {
 
+        public ProductServices(NorthwindContext ctx) : base(ctx) {
+
+        }
+
         public int CountProducts() {
             return DataContext.Products.Count();
         }

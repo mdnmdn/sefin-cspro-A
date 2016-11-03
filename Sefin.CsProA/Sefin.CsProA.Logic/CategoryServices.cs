@@ -10,6 +10,9 @@ namespace Sefin.CsProA.Logic
     public class CategoryServices : BaseServices
     {
 
+        public CategoryServices(NorthwindContext ctx):base(ctx) {
+        }
+
         public int CountCategories() {
             return DataContext.Categories.Count();
         }

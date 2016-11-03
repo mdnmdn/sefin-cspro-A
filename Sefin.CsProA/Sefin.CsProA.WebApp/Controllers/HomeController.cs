@@ -4,18 +4,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Ninject;
 
 namespace Sefin.CsProA.WebApp.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : ControllerBase
     {
+        private CategoryServices _categoryService;
+        private ProductServices _productService;
+
+        public HomeController(CategoryServices categoryService, ProductServices productService) {
+            _categoryService = categoryService;
+            _productService = productService;
+
+        }
+
         public ActionResult Index()
         {
-            using (var categoryService = new CategoryServices())
-            {
-                ViewBag.NumCategories = categoryService.CountCategories();
-            }
+            ViewBag.NumCategories = _categoryService.CountCategories();
 
+            var prodService = Kernel.Get<ProductServices>();
+
+            prodService.CountProducts();
+            
             return View();
         }
 
