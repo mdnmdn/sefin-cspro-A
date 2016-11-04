@@ -21,6 +21,10 @@ namespace Sefin.CsProA.Logic
             get { return _dataContext ?? (_dataContext = new NorthwindContext()); }
         }
         #endregion
-      
+
+        public void Commit() {
+            _dataContext.SaveChanges();
+        }
+
     }
 }

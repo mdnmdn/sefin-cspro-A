@@ -25,8 +25,15 @@ namespace Sefin.CsProA.WebApp.Controllers
 
             var prodService = Kernel.Get<ProductServices>();
 
+            var prodService2 = this.ResolveObject<ProductServices>();
+
             prodService.CountProducts();
-            
+
+            //prodService.UpdateStock(23);
+            //_categoryService.Rename("pippo");
+
+            //prodService.Commit();
+
             return View();
         }
 
